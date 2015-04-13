@@ -29,7 +29,10 @@ static NSMutableArray *savedStateArr;
     const char *extendedType = method_getTypeEncoding(extendedMethod);
 
     // 覆盖父类的Sel的IMP，不能修改该类的Sel的IMP
-    if (class_addMethod([self class], originalSel, method_getImplementation(extendedMethod), extendedType)) {
+    
+    BOOL hasAdd =  class_addMethod([self class], originalSel, method_getImplementation(extendedMethod), extendedType);
+
+    if (hasAdd) {
         
         class_replaceMethod([self class], extendedSel, method_getImplementation(originalMethod), originalType);
         
@@ -40,6 +43,7 @@ static NSMutableArray *savedStateArr;
         *  method_setImplementation(m1, imp2);
         *  method_setImplementation(m2, imp1);
         */
+        
         method_exchangeImplementations(originalMethod, extendedMethod);
     }
 }

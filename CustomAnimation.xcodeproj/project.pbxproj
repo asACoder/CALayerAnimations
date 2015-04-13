@@ -121,9 +121,6 @@
 		90CBC2F31A0F24F300B7F3E4 /* CustomAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				90CBC2FC1A0F24F300B7F3E4 /* AppDelegate.h */,
-				90CBC2FD1A0F24F300B7F3E4 /* AppDelegate.m */,
-				90CBC2FF1A0F24F300B7F3E4 /* Main.storyboard */,
 				90CBC3021A0F24F300B7F3E4 /* ViewController.h */,
 				90CBC3031A0F24F300B7F3E4 /* ViewController.m */,
 				90CBC3251A0F29DA00B7F3E4 /* AnimationLayer.h */,
@@ -141,6 +138,9 @@
 		90CBC2F41A0F24F300B7F3E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				90CBC2FC1A0F24F300B7F3E4 /* AppDelegate.h */,
+				90CBC2FD1A0F24F300B7F3E4 /* AppDelegate.m */,
+				90CBC2FF1A0F24F300B7F3E4 /* Main.storyboard */,
 				90CBC2F51A0F24F300B7F3E4 /* CustomAnimation-Info.plist */,
 				90CBC2F61A0F24F300B7F3E4 /* InfoPlist.strings */,
 				90CBC2F91A0F24F300B7F3E4 /* main.m */,

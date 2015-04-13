@@ -44,9 +44,6 @@
 
 
 
-
-
-
 // note
 @dynamic progress;
 
@@ -58,8 +55,6 @@
     }else{
         return [super needsDisplayForKey:key];
     }
-    
-
 }
 
 
@@ -70,7 +65,7 @@
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:event];
         animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-        animation.duration = 1.0f;
+        animation.duration = 12.0f;
 //        NSLog(@"[self presentationLayer] progress] %f",[[self presentationLayer] progress]);
         animation.fromValue = @([[self presentationLayer] progress]);
         return animation;
@@ -94,13 +89,15 @@
     CGPoint center = CGPointMake(CGRectGetMidX(self.bounds), CGRectGetMidY(self.bounds));
     CGContextSetLineWidth(ctx, 1);
     CGContextSetStrokeColorWithColor(ctx, [UIColor greenColor].CGColor);
-//    CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
+    CGContextSetFillColorWithColor(ctx, [UIColor redColor].CGColor);
 
     CGFloat endAngle =  2 * M_PI * progress;
 
     CGContextAddArc(ctx, center.x, center.y, 40, 0, endAngle, 0);
-    CGContextStrokePath(ctx);
-//    CGContextFillPath(ctx);
+    CGContextAddArc(ctx, center.x, center.y, 0, endAngle, 0, 1);
+
+//    CGContextStrokePath(ctx);
+    CGContextFillPath(ctx);
     
     self.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
     
